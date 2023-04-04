@@ -52,6 +52,9 @@ RUN git clone --depth 1 --branch ${VERSION} https://github.com/CellProfiler/Cell
 # download the CellPose plugin
 RUN cd /CellProfiler/plugins && wget https://raw.githubusercontent.com/CellProfiler/CellProfiler-plugins/master/runcellpose.py
 
+# download the StarDist plugin
+RUN cd /CellProfiler/plugins && wget https://raw.githubusercontent.com/CellProfiler/CellProfiler-plugins/master/runstardist.py
+
 # install CellProfiler
 RUN cd /CellProfiler && pip3 install .
 
