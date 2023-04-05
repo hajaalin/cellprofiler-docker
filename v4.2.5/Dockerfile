@@ -47,7 +47,7 @@ RUN pip3 install \
         cellpose==0.6.5
 
 # install StarDist
-RUN pip3 install stardist csbdeep --no-deps
+RUN pip3 install stardist csbdeep
 
 # fetch Cellprofiler
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/CellProfiler/CellProfiler.git
