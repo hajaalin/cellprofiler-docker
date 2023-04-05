@@ -46,6 +46,9 @@ RUN pip3 install \
         wxPython-4.1.0-cp38-cp38-linux_x86_64.whl \
         cellpose==0.6.5
 
+# install StarDist
+RUN pip3 install stardist csbdeep --no-deps
+
 # fetch Cellprofiler
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/CellProfiler/CellProfiler.git
 
