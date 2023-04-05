@@ -29,5 +29,5 @@ jobs:
         with:
           context: ./v4.2.5
           push: true
-          tags: v4.2.5
+          tags: hajaalin/cellprofiler:v4.2.5
           labels: ${{ steps.meta.outputs.labels }}
