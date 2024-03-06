@@ -43,7 +43,7 @@ ENV PATH=$PATH:/home/ubuntu/.local/bin
 RUN wget https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
 RUN pip3 install \
         numpy==1.20.1 \
-        wxPython-4.1.0-cp38-cp38-linux_x86_64.whl \
+        wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
 
 # fetch Cellprofiler
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/CellProfiler/CellProfiler.git
