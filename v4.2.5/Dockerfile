@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-ARG VERSION=v4.2.x
+ARG VERSION=4.2.x
 
 # set timezone
 ENV TZ=Europe/Helsinki
