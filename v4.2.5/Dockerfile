@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-ARG VERSION=v4.2.5
+ARG VERSION=v4.2.x
 
 # set timezone
 ENV TZ=Europe/Helsinki
@@ -44,25 +44,12 @@ RUN wget https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04/wx
 RUN pip3 install \
         numpy==1.20.1 \
         wxPython-4.1.0-cp38-cp38-linux_x86_64.whl \
-        cellpose==0.6.5
-
-# install StarDist
-RUN pip3 install stardist csbdeep
 
 # fetch Cellprofiler
 RUN git clone --depth 1 --branch ${VERSION} https://github.com/CellProfiler/CellProfiler.git
 
-# download the CellPose plugin
-RUN cd /CellProfiler/plugins && wget https://raw.githubusercontent.com/CellProfiler/CellProfiler-plugins/master/runcellpose.py
-
-# download the StarDist plugin
-RUN cd /CellProfiler/plugins && wget https://raw.githubusercontent.com/CellProfiler/CellProfiler-plugins/master/runstardist.py
-
 # install CellProfiler
 RUN cd /CellProfiler && pip3 install .
 
-# trigger download of pre-built images
-RUN python3 -m cellpose
-
 # set entrypoint
-ENTRYPOINT ["cellprofiler", "--plugins-directory", "/CellProfiler/plugins"]
+ENTRYPOINT ["cellprofiler"]
