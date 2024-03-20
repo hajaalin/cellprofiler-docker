@@ -39,6 +39,9 @@ ENV LC_ALL en_US.UTF-8
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH=$PATH:/home/ubuntu/.local/bin
 
+# add env for java options
+ENV JAVA_OPTS=""
+
 # install Python dependencies
 RUN wget https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
 RUN pip3 install \
