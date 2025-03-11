@@ -27,7 +27,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@35434f557ad77672899d67f7992fb5560bda1071
         with:
-          context: ./v4.2.5
+          context: ./v4.2.8
           push: true
-          tags: hajaalin/cellprofiler:v4.2.5
+          tags: hajaalin/cellprofiler:v4.2.8
           labels: ${{ steps.meta.outputs.labels }}
